@@ -1,0 +1,213 @@
+@font-face {
+	font-display: swap;
+	font-family: Gotham SSm;
+	font-style: normal;
+	font-weight: 700;
+	src: url(https://cdn-design.tesla.com/assets/GothamSSm-Bold_Web.woff2) format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: Gotham SSm;
+	font-style: normal;
+	font-weight: 500;
+	src: url(https://cdn-design.tesla.com/assets/GothamSSm-Medium_Web.woff2) format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: Gotham SSm;
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://cdn-design.tesla.com/assets/GothamSSm-Book_Web.woff2) format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: Gotham SSm;
+	font-style: normal;
+	font-weight: 300;
+	src: url(https://cdn-design.tesla.com/assets/GothamSSm-Light_Web.woff2) format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: Gotham SSm;
+	font-style: normal;
+	font-weight: 200;
+	src: url(https://cdn-design.tesla.com/assets/GothamSSm-XLight_Web.woff2) format('woff2');
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: Gotham SSm;
+}
+
+body {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.main-page {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+
+	.device-list,
+	.device-estimate {
+		margin: 10px;
+		padding: 10px;
+		background-color: white;
+		border-radius: 4px;
+		border: 1px solid #d0d1d2;
+	}
+
+	.left-panel {
+		flex: 1;
+		overflow: auto;
+
+		.main-logo {
+			width: 140px;
+		}
+
+		.device-estimate {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 30px 10px;
+
+			div {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.value {
+					font-size: 1.5em;
+					margin: 0;
+					text-align: center;
+				}
+
+				.name {
+					margin: 0;
+					text-align: center;
+					font-size: 0.7em;
+					color: #5c5e62;
+				}
+			}
+		}
+	}
+
+	.right-panel {
+		overflow: auto;
+
+		.layout-preview {
+			width: 100%;
+			height: 100%;
+			position: relative;
+
+			.canvas-container,
+			canvas {
+				width: 100%;
+			}
+
+			.btn-change-mode {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+
+				color: #171a20;
+				text-align: center;
+				background-color: white;
+				border: 2px solid #171a20;
+				border-radius: 3px;
+				transition: border-color 0.33s ease, background-color 0.33s ease, color 0.33s ease;
+				line-height: 2;
+				cursor: pointer;
+
+				&:hover, &:focus {
+					background-color: #171a20;
+					color: white;
+					border-color: white;
+				}
+			}
+		}
+	}
+}
+
+.device-picker {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+
+	details summary {
+		cursor: pointer;
+		transition: margin 150ms ease-out;
+	}
+
+	details[open] summary {
+		margin-bottom: 10px;
+	}
+
+	.device-info {
+		display: flex;
+		align-items: center;
+
+		.device-details {
+			font-size: 0.7em;
+		}
+
+		.device-image {
+			width: 150px;
+			margin: 0 10px;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.number-input {
+	background-color: #f4f4f4;
+	block-size: auto;
+	border-radius: 4px;
+	box-shadow: #f4f4f4 0px 0px 0px 1px inset;
+	transition: background-color 0.5s cubic-bezier(0.5, 0, 0, 0.75);
+	padding: 0;
+	border: 1px solid transparent;
+	padding: 0 12px;
+
+	&:focus-within {
+		border-color: #d0d1d2;
+	}
+
+	input {
+		block-size: 30px;
+		text-overflow: ellipsis;
+		border: none;
+		background: none;
+		outline: none;
+	}
+}
