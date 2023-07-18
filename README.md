@@ -16,6 +16,9 @@ Site layout preview is rendered in an instance of fabricJS canvas. There are two
 Both of them look in the available space of a single row and try to find the next best fit for a device.
 User can toggle these modes by clicking **Change mode** button in the top right corner
 
+Unfortunately image samples are not really of the best quality. I only found what I believe to be megapack 2 from birds pespective so I cropped that one for other
+batteries according to the dimensions provided in the input data 
+
 ## Land estimation
 Since there is 5ft padding between each row of devices, this number is also included in land estimation.
 
